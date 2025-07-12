@@ -5,6 +5,7 @@ import Skills from '../components/Skills';
 import BenefitsSection from '../components/BenifitsSection';
 import SuccessStories from '../components/SuccessStories';
 import FAQ from '../components/FAQ';
+import Ai from '../components/AI';
 
 const Home = () => {
   return (
@@ -24,11 +25,12 @@ const Home = () => {
         </div>
 
         <div className="hero-graphic">
-          <p className="demo-text"></p>
+          <img className='home-img' src='img.jpg'></img>
         </div>
       </div>
       <Working />
       <Skills />
+      <Ai/>
       <BenefitsSection />
       <SuccessStories />
       <FAQ />

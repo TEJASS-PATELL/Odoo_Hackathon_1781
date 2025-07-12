@@ -38,25 +38,8 @@ const FAQ = () => {
 
   return (
     <>
-      {/* CTA Section */}
-      <section className="cta-section">
-        <div className="cta-container">
-          <h2 className="cta-heading">Ready to Learn and Teach?</h2>
-          <p className="cta-subtext">
-            Join thousands of creators, professionals, and lifelong learners on SkillSwap today.
-            Your next skill is just a swap away.
-          </p>
-          <div className="cta-button-wrapper">
-            <a href="#" className="cta-button">
-              Join SkillSwap Today!
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="faq-section">
-        <h2 className="faq-title">🙋 Frequently Asked Questions</h2>
+       <section className="faq-section">
+        <h2 className="faq-title">Frequently Asked Questions</h2>
         <div className="faq-wrapper">
           {faqs.map((faq, index) => (
             <div
@@ -77,6 +60,20 @@ const FAQ = () => {
               )}
             </div>
           ))}
+        </div>
+      </section>
+      <section className="cta-section">
+        <div className="cta-container">
+          <h2 className="cta-heading">Ready to Learn and Teach?</h2>
+          <p className="cta-subtext">
+            Join thousands of creators, professionals, and lifelong learners on SkillSwap today.
+            Your next skill is just a swap away.
+          </p>
+          <div className="cta-button-wrapper">
+            <a href="#" className="cta-button">
+              Join SkillSwap Today!
+            </a>
+          </div>
         </div>
       </section>
     </>

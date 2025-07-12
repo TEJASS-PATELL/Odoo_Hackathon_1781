@@ -1,30 +1,30 @@
 .benefits-section {
-  padding: 80px 20px;
-  background-color: #f9fafb;
+  padding: 120px 20px;
+  background-color: #ffffff;
   text-align: center;
 }
 
 .benefits-container {
-  max-width: 1100px;
+  max-width: 1200px;
   margin: auto;
 }
 
 .benefits-title {
-  font-size: 32px;
+  font-size: 45px;
   font-weight: bold;
-  color: #1f2937;
+  color: #000000;
   margin-bottom: 10px;
 }
 
 .benefits-subtitle {
-  font-size: 16px;
+  font-size: 20px;
   color: #6b7280;
   margin-bottom: 40px;
 }
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 24px;
   text-align: left;
 }
@@ -53,13 +53,13 @@
 }
 
 .benefit-heading {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 600;
   margin-bottom: 6px;
   color: #111827;
 }
 
 .benefit-text {
-  font-size: 15px;
+  font-size: 16px;
   color: #4b5563;
 }
