@@ -1,9 +1,30 @@
-import React from 'react'
+import React from 'react';
+import './Home.css';
 
-function Signup() {
+const Home = () => {
   return (
-    <div>Signup</div>
-  )
-}
+    <section className="hero">
+      <div className="hero-container">
+        <h1 className="hero-title">
+          Swap Skills, Share Knowledge, <br />
+          <span className="highlight">Grow Together</span>
+        </h1>
+        <p className="hero-subtitle">
+          The ultimate platform to learn what you want and teach what you know,
+          connecting you with a global community of creators and professionals.
+        </p>
+        <div className="hero-buttons">
+          <a href="#" className="btn-primary">Start Sharing →</a>
+          <a href="#skills" className="btn-outline">Explore Skills</a>
+        </div>
 
-export default Signup
+        <div className="hero-graphic">
+          <p className="demo-text"></p>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default Home;
+
