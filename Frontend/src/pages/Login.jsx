@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-// import { useAuthStore } from "../Store/useAuthStore";
+import { useAuthStore } from "../stores/useAuthStore";
 import { Link } from "react-router-dom";
 import { FaLock, FaLockOpen } from 'react-icons/fa';
 import { Loader2, Lock, Mail } from "lucide-react";
@@ -8,7 +8,7 @@ import "./Login.css";
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
-  const { login, isLoggingIn } = useState(true);
+  const { login, isLoggingIn } = useAuthStore();
 
   const formRef = useRef(null);
 

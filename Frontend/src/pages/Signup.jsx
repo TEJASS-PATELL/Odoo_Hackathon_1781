@@ -1,9 +1,9 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-// import { useAuthStore } from "../Store/useAuthStore";
-import { FaEye, FaEyeSlash, FaLock, FaLockOpen } from 'react-icons/fa';
-import { Eye, EyeOff, Loader2, Lock, Mail, Unlock, User } from "lucide-react";
-import { toast } from 'react-toastify';
+import { useEffect, useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuthStore } from "../stores/useAuthStore";
+import { FaLock, FaLockOpen } from "react-icons/fa";
+import { Loader2, Lock, Mail, User } from "lucide-react";
+import toast from "react-hot-toast";
 import "./Signup.css";
 
 const Signup = () => {
@@ -11,142 +11,155 @@ const Signup = () => {
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
-    location: "",
     password: "",
     confirmPassword: "",
   });
 
-  const { signup, isSigningUp } = useState(true);
+  const navigate = useNavigate();
+  const { signup, isSigningUp, authUser } = useAuthStore();
 
+  useEffect(() => {
+    if (authUser) {
+      if (!authUser.isProfileComplete) {
+        navigate("/update-details");
+      } else {
+        navigate("/dashboard");
+      }
+    }
+  }, [authUser, navigate]);
+
+  // ✅ Form Validation
   const validateForm = () => {
-    const { fullname, email, location, password, confirmPassword } = formData;
+    const { fullname, email, password, confirmPassword } = formData;
     if (!fullname.trim()) return toast.error("Full name is required");
     if (!email.trim()) return toast.error("Email is required");
     if (!/\S+@\S+\.\S+/.test(email)) return toast.error("Invalid email format");
-    if (!location.trim()) return toast.error("Username is required");
     if (!password) return toast.error("Password is required");
     if (password.length < 6) return toast.error("Password must be at least 6 characters");
     if (password !== confirmPassword) return toast.error("Passwords do not match");
-
     return true;
   };
 
+  // ✅ Submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      const { fullname, email, location, password } = formData;
-      signup({ fullname, email, location, password });
+      const { fullname, email, password } = formData;
+      signup({ fullname, email, password });
     }
   };
 
   return (
     <div className="loginnn">
-    <div className="signup-container">
-      {/* Main Form */}
-      <main>
-        <form className="signup-form" onSubmit={handleSubmit}>
-          <h2>Create an Account</h2>
+      <div className="signup-container">
+        <main>
+          <form className="signup-form" onSubmit={handleSubmit}>
+            <h2>Create an Account</h2>
 
-          {/* Full Name */}
-          <div className="input-group">
-            <label>Full Name</label>
-            <div className="input-wrapper">
-              <User className="input-icon" />
-              <input
-                type="text"
-                placeholder="Full Name"
-                value={formData.fullname}
-                onChange={(e) => setFormData({ ...formData, fullname: e.target.value })}
-                required
-              />
+            {/* Full Name */}
+            <div className="input-group">
+              <label>Full Name</label>
+              <div className="input-wrapper">
+                <User className="input-icon" />
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  value={formData.fullname}
+                  onChange={(e) =>
+                    setFormData({ ...formData, fullname: e.target.value })
+                  }
+                  required
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Email */}
-          <div className="input-group">
-            <label>Email</label>
-            <div className="input-wrapper">
-              <Mail className="input-icon" />
-              <input
-                type="email"
-                placeholder="you@example.com"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                required
-              />
+            {/* Email */}
+            <div className="input-group">
+              <label>Email</label>
+              <div className="input-wrapper">
+                <Mail className="input-icon" />
+                <input
+                  type="email"
+                  placeholder="you@example.com"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
+                  required
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Username */}
-          <div className="input-group">
-            <label>Location</label>
-            <div className="input-wrapper">
-              <User className="input-icon" />
-              <input
-                type="text"
-                placeholder="Username"
-                value={formData.location}
-                onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                required
-              />
+            {/* Password */}
+            <div className="input-group">
+              <label>Password</label>
+              <div className="input-wrapper">
+                <Lock className="input-icon" />
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="••••••••"
+                  value={formData.password}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
+                  required
+                />
+                <button
+                  type="button"
+                  className="toggle-password"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? <FaLockOpen /> : <FaLock />}
+                </button>
+              </div>
             </div>
-          </div>
 
-          {/* Password */}
-          <div className="input-group">
-            <label>Password</label>
-            <div className="input-wrapper">
-              <Lock className="input-icon" />
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="••••••••"
-                value={formData.password}
-                onChange={(e) => setFormData({ ...formData, password: e.target.value })}
-                required
-              />
-              <button type="button" className="toggle-password" onClick={() => setShowPassword(!showPassword)}>
-                {showPassword ? <FaLockOpen /> : <FaLock />}
-              </button>
+            {/* Confirm Password */}
+            <div className="input-group">
+              <label>Confirm Password</label>
+              <div className="input-wrapper">
+                <Lock className="input-icon" />
+                <input
+                  type={showPassword ? "text" : "password"}
+                  placeholder="••••••••"
+                  value={formData.confirmPassword}
+                  onChange={(e) =>
+                    setFormData({
+                      ...formData,
+                      confirmPassword: e.target.value,
+                    })
+                  }
+                  required
+                />
+              </div>
             </div>
-          </div>
 
-          {/* Confirm Password */}
-          <div className="input-group">
-            <label>Confirm Password</label>
-            <div className="input-wrapper">
-              <Lock className="input-icon" />
-              <input
-                type={showPassword ? "text" : "password"}
-                placeholder="••••••••"
-                value={formData.confirmPassword}
-                onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
-                required
-              />
-            </div>
-          </div>
-          
-          <button type="submit" className={`submit-btn ${isSigningUp ? "disabled" : ""}`} disabled={isSigningUp}>
-            {isSigningUp ? (
-              <>
-                <Loader2 className="loader" />
-                Creating Account...
-              </>
-            ) : (
-              "Sign Up"
-            )}
-          </button>
+            {/* Submit Button */}
+            <button
+              type="submit"
+              className={`submit-btn ${isSigningUp ? "disabled" : ""}`}
+              disabled={isSigningUp}
+            >
+              {isSigningUp ? (
+                <>
+                  <Loader2 className="loader" />
+                  Creating Account...
+                </>
+              ) : (
+                "Sign Up"
+              )}
+            </button>
 
-          <p className="login-redirect">
-            Already have an account? <Link to="/login">Log In</Link>
-          </p>
-        </form>
-      </main>
+            <p className="login-redirect">
+              Already have an account? <Link to="/login">Log In</Link>
+            </p>
+          </form>
+        </main>
 
-      {/* Footer */}
-      <footer>
-        <p>&copy; 2025 Skill Swap. All rights reserved.</p>
-      </footer>
-    </div>
+        <footer>
+          <p>&copy; 2025 Skill Swap. All rights reserved.</p>
+        </footer>
+      </div>
     </div>
   );
 };

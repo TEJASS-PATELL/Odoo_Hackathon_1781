@@ -8,18 +8,43 @@ const Ai = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  const apiKey = ''; // 👈 Put your Gemini API key here
+
   const generateLearningPath = async () => {
     if (!skill.trim()) {
-      setError('Please enter a skill.');
+      setError('❗ Please enter a skill.');
       return;
     }
+
+    if (!apiKey.trim()) {
+      setError('⚠️ Please enter your API key to generate a learning path.');
+      return;
+    }
+
     setIsLoading(true);
     setError(null);
     setLearningPath(null);
 
-    const prompt = `Generate a structured learning path for the skill: "${skill}". The path should have a title, a short description, and 3-5 milestones. Each milestone must have a title and a list of key topics to learn.`;
+    const prompt = `Generate a structured learning path for the skill: "${skill}". The path should have a title, a short description, and 3-5 milestones. Each milestone must have a title and a list of key topics to learn. Return JSON format like:
+{
+  "pathTitle": "Title here",
+  "description": "Short description here",
+  "milestones": [
+    {
+      "milestoneTitle": "Milestone 1 title",
+      "topics": ["Topic 1", "Topic 2"]
+    }
+  ]
+}`;
 
-    const apiKey = ''; // Your Gemini API key here
+    const payload = {
+      contents: [
+        {
+          parts: [{ text: prompt }],
+        },
+      ],
+    };
+
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
     try {
@@ -28,14 +53,20 @@ const Ai = () => {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
       });
-      if (!response.ok) throw new Error(`API error: ${response.statusText}`);
+
+      if (!response.ok) {
+        throw new Error(`API error: ${response.statusText}`);
+      }
+
       const result = await response.json();
 
-      if (result?.candidates?.[0]?.content?.parts?.[0]?.text) {
-        const pathData = JSON.parse(result.candidates[0].content.parts[0].text);
+      const textOutput = result?.candidates?.[0]?.content?.parts?.[0]?.text;
+
+      if (textOutput) {
+        const pathData = JSON.parse(textOutput);
         setLearningPath(pathData);
       } else {
-        throw new Error('Unexpected API response structure.');
+        throw new Error('Unexpected API response format.');
       }
     } catch (err) {
       setError(err.message || 'Failed to generate learning path.');
@@ -52,7 +83,7 @@ const Ai = () => {
             <SparklesIcon className="icon" /> AI-Powered Learning Paths
           </h2>
           <p>
-            Don't know where to start? Tell our AI what you want to learn and get a custom roadmap instantly.
+            Don&apos;t know where to start? Tell our AI what you want to learn and get a custom roadmap instantly.
           </p>
         </div>
 
