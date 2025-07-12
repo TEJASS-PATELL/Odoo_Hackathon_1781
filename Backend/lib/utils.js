@@ -4,7 +4,11 @@ dotenv.config();
 
 const generateToken = (userId, res) => {
   try {
-    const secretKey = "mysecretkey";
+    const secretKey = process.env.JWT_SECRET; 
+
+    if (!secretKey) {
+      throw new Error("JWT_SECRET is not defined in .env");
+    }
 
     const token = jwt.sign({ userId }, secretKey, {
       expiresIn: "7d",
@@ -13,12 +17,11 @@ const generateToken = (userId, res) => {
     res.cookie("jwt", token, {
       maxAge: 7 * 24 * 60 * 60 * 1000,
       httpOnly: true,
-      sameSite: "strict",             
+      sameSite: "strict",
       secure: process.env.NODE_ENV === "production",  
     });
 
     return token;
-
   } catch (error) {
     console.error("Error generating token:", error.message);
     throw new Error("Token generation failed");
