@@ -45,7 +45,7 @@
 
 .login-btn {
   background: #000000;
-  color: rgb(255, 255, 255);
+  color: white;
   padding: 6px 16px;
   border-radius: 8px;
   text-decoration: none;
@@ -65,7 +65,26 @@
   background: #5b21b6;
 }
 
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #000;
+  border-radius: 2px;
+}
+
 @media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
   .navbar-links {
     position: absolute;
     top: 70px;
@@ -76,6 +95,7 @@
     padding: 1rem;
     display: none;
     border-top: 1px solid #ddd;
+    z-index: 99;
   }
 
   .navbar-links.open {

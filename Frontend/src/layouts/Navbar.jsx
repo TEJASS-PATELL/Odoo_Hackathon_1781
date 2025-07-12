@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Navbar.css';
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleMenu = () => setIsOpen(!isOpen);
+
   return (
     <header className="navbar">
       <div className="navbar-container">
@@ -9,7 +12,13 @@ export default function Navbar() {
           Skill<span className="highlight">Swap</span>
         </a>
 
-        <nav className="navbar-links">
+        <div className="hamburger" onClick={toggleMenu}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <nav className={`navbar-links ${isOpen ? 'open' : ''}`}>
           <a href="#how-it-works">How It Works</a>
           <a href="#skills">Skills</a>
           <a href="#ai-path">✨ AI Paths</a>

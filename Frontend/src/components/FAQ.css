@@ -1,0 +1,121 @@
+.cta-section {
+  padding: 120px 20px;
+  background-color: #000000; 
+  color: white;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.cta-container {
+  max-width: 900px;
+  margin: auto;
+  padding: 0 1.5rem;
+}
+
+.cta-heading {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media (min-width: 768px) {
+  .cta-heading {
+    font-size: 2.5rem;
+  }
+}
+
+.cta-subtext {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  color: #ffffff; 
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.cta-button-wrapper {
+  margin-top: 2rem;
+}
+
+.cta-button {
+  background-color: white;
+  color: #000000;
+  padding: 16px 40px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: #f5f3ff; 
+  transform: scale(1.05);
+}
+
+.faq-section {
+  padding: 120px 20px;
+  background-color: #ffffff;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.faq-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #000000;
+  margin-bottom: 40px;
+}
+
+.faq-wrapper {
+  max-width: 800px;
+  margin: auto;
+  text-align: left;
+}
+
+.faq-item {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  padding: 18px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: background 0.3s ease;
+  cursor: pointer;
+}
+
+.faq-item:hover {
+  background: #f5f3ff;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  color: #000000;
+  font-size: 1.15rem;
+}
+
+.faq-icon {
+  color: #7c3aed;
+  font-size: 1rem;
+}
+
+.faq-answer {
+  margin-top: 10px;
+  font-size: 0.95rem;
+  color: #313131;
+  line-height: 1.5;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.faq-item.open {
+  border-color: #000000;
+}
+
