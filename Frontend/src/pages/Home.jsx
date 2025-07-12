@@ -1,5 +1,8 @@
 import React from 'react';
-import './Home.css';
+import './Home.css'
+import Working from '../components/Working';
+import Skills from '../components/Skills';
+import BenefitsSection from '../components/BenifitsSection';
 
 const Home = () => {
   return (
@@ -22,6 +25,9 @@ const Home = () => {
           <p className="demo-text"></p>
         </div>
       </div>
+      <Working />
+      <Skills />
+      <BenefitsSection />
     </section>
   );
 };
