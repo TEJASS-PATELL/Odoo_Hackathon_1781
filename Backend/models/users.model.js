@@ -10,11 +10,11 @@ async function ConnectUser() {
             password VARCHAR(200) NOT NULL,
             email VARCHAR(255) NOT NULL UNIQUE,
             location VARCHAR(255),
-            profilepic VARCHAR(500),
             bio TEXT,
             skillshave TEXT,
             skillswant TEXT,
             availability TEXT, 
+            isProfileComplete BOOLEAN DEFAULT FALSE, 
             isPublic BOOLEAN DEFAULT TRUE, 
             createdat TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );    

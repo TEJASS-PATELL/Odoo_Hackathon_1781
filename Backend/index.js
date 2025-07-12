@@ -21,8 +21,8 @@ app.use(cors({
 
 app.use("/api/auth", authRoutes);
 
-const PORT = process.env.PORT || 5001;
+const PORT = 5001;
 
 server.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
