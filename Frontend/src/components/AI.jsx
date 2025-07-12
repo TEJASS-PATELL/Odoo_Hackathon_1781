@@ -19,32 +19,6 @@ const Ai = () => {
 
     const prompt = `Generate a structured learning path for the skill: "${skill}". The path should have a title, a short description, and 3-5 milestones. Each milestone must have a title and a list of key topics to learn.`;
 
-    const payload = {
-      contents: [{ role: 'user', parts: [{ text: prompt }] }],
-      generationConfig: {
-        responseMimeType: 'application/json',
-        responseSchema: {
-          type: 'OBJECT',
-          properties: {
-            pathTitle: { type: 'STRING' },
-            description: { type: 'STRING' },
-            milestones: {
-              type: 'ARRAY',
-              items: {
-                type: 'OBJECT',
-                properties: {
-                  milestoneTitle: { type: 'STRING' },
-                  topics: { type: 'ARRAY', items: { type: 'STRING' } },
-                },
-                required: ['milestoneTitle', 'topics'],
-              },
-            },
-          },
-          required: ['pathTitle', 'description', 'milestones'],
-        },
-      },
-    };
-
     const apiKey = ''; // Your Gemini API key here
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
 
