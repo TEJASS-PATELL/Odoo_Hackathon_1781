@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // import { useAuthStore } from "../Store/useAuthStore";
 import { FaEye, FaEyeSlash, FaLock, FaLockOpen } from 'react-icons/fa';
 import { Eye, EyeOff, Loader2, Lock, Mail, Unlock, User } from "lucide-react";
+import { toast } from 'react-toastify';
 import "./Signup.css";
 
 const Signup = () => {
@@ -10,7 +11,7 @@ const Signup = () => {
   const [formData, setFormData] = useState({
     fullname: "",
     email: "",
-    username: "",
+    location: "",
     password: "",
     confirmPassword: "",
   });
@@ -18,11 +19,11 @@ const Signup = () => {
   const { signup, isSigningUp } = useState(true);
 
   const validateForm = () => {
-    const { fullname, email, username, password, confirmPassword } = formData;
+    const { fullname, email, location, password, confirmPassword } = formData;
     if (!fullname.trim()) return toast.error("Full name is required");
     if (!email.trim()) return toast.error("Email is required");
     if (!/\S+@\S+\.\S+/.test(email)) return toast.error("Invalid email format");
-    if (!username.trim()) return toast.error("Username is required");
+    if (!location.trim()) return toast.error("Username is required");
     if (!password) return toast.error("Password is required");
     if (password.length < 6) return toast.error("Password must be at least 6 characters");
     if (password !== confirmPassword) return toast.error("Passwords do not match");
@@ -33,8 +34,8 @@ const Signup = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
-      const { fullname, email, username, password } = formData;
-      signup({ fullname, email, username, password });
+      const { fullname, email, location, password } = formData;
+      signup({ fullname, email, location, password });
     }
   };
 
@@ -78,14 +79,14 @@ const Signup = () => {
 
           {/* Username */}
           <div className="input-group">
-            <label>Username</label>
+            <label>Location</label>
             <div className="input-wrapper">
               <User className="input-icon" />
               <input
                 type="text"
                 placeholder="Username"
-                value={formData.username}
-                onChange={(e) => setFormData({ ...formData, username: e.target.value })}
+                value={formData.location}
+                onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                 required
               />
             </div>
@@ -123,16 +124,7 @@ const Signup = () => {
               />
             </div>
           </div>
-
-          {/* Terms & Conditions */}
-          <div className="terms">
-            <input type="checkbox" id="terms" required />
-            <label htmlFor="terms">
-              I agree to the <a href="#">Terms and Conditions</a>
-            </label>
-          </div>
-
-          {/* Submit */}
+          
           <button type="submit" className={`submit-btn ${isSigningUp ? "disabled" : ""}`} disabled={isSigningUp}>
             {isSigningUp ? (
               <>
@@ -144,7 +136,6 @@ const Signup = () => {
             )}
           </button>
 
-          {/* Redirect to Login */}
           <p className="login-redirect">
             Already have an account? <Link to="/login">Log In</Link>
           </p>
@@ -153,7 +144,7 @@ const Signup = () => {
 
       {/* Footer */}
       <footer>
-        <p>&copy; 2025 Chat App. All rights reserved.</p>
+        <p>&copy; 2025 Skill Swap. All rights reserved.</p>
       </footer>
     </div>
     </div>

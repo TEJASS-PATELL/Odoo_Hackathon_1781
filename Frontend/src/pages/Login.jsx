@@ -62,11 +62,6 @@ const Login = () => {
                 </button>
               </div>
 
-              <div className="remember-me">
-                <input type="checkbox" id="remember" />
-                <label htmlFor="remember">Remember Me</label>
-              </div>
-
               <button type="submit" className="submit-btnn" disabled={isLoggingIn}>
                 {isLoggingIn ? (
                   <div class="loader-container">
@@ -91,7 +86,7 @@ const Login = () => {
         </main>
 
         <footer className="login-footer">
-          <p>&copy; 2025 Chat App. All rights reserved.</p>
+          <p>&copy; 2025 Skill Swap. All rights reserved.</p>
         </footer>
       </div>
     </div>

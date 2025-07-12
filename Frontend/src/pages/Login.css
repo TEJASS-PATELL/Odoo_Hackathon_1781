@@ -41,11 +41,6 @@
   margin-bottom: 20px;
 }
 
-.images {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-}
 
 /* Form */
 .login-form {
@@ -71,7 +66,7 @@
   padding: 10px 40px 10px 36px;
   border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 15px;
+  font-size: 16px;
   transition: border-color 0.3s ease;
 }
 
@@ -106,18 +101,6 @@
   position: relative;
 }
 
-/* Remember Me */
-.remember-me {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px;
-}
-
-.remember-me input {
-  margin-right: 5px;
-}
-
-/* Submit Button */
 .submit-btnn {
   padding: 10px;
   background-color: #007bff;
@@ -166,8 +149,7 @@
 p {
   margin-top: 15px;
   color: #666;
-  font-size: 14px;
-  text-align: center;
+  font-size: 16px;
 }
 
 /* Footer */
