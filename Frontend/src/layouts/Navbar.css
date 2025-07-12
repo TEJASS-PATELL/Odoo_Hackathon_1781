@@ -17,7 +17,7 @@
 }
 
 .navbar-logo {
-  font-size: 24px;
+  font-size: 25px;
   font-weight: bold;
   color: #000000;
   text-decoration: none;
@@ -35,16 +35,14 @@
 
 .navbar-links a {
   color: #000000;
+  font-size: 18px;
   text-decoration: none;
   transition: color 0.3s;
 }
 
-.navbar-links a:hover {
-  color: #7c3aed;
-}
-
 .login-btn {
   background: #000000;
+  border: none;
   color: white;
   padding: 6px 16px;
   border-radius: 8px;
@@ -56,13 +54,10 @@
   background: #7c3aed;
   color: white;
   padding: 6px 16px;
+  border: none;
   border-radius: 8px;
   text-decoration: none;
   transition: background 0.3s;
-}
-
-.join-btn:hover {
-  background: #5b21b6;
 }
 
 /* Hamburger menu */

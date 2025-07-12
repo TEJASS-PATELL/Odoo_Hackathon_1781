@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,8 +25,8 @@ export default function Navbar() {
           <a href="#ai-path">✨ AI Paths</a>
           <a href="#benefits">Benefits</a>
           <a href="#testimonials">Testimonials</a>
-          <a href="/login" className="login-btn">Log In</a>
-          <a href="/signup" className="join-btn">Join for Free</a>
+         <Link to="/login" className="login-btn">Log In</Link>
+          <Link to="/signup" className="join-btn">Join for Free</Link>
         </nav>
       </div>
     </header>

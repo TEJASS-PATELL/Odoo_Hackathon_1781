@@ -1,5 +1,5 @@
 .cta-section {
-  padding: 120px 20px;
+  padding: 50px 20px;
   background-color: #000000; 
   color: white;
   text-align: center;
@@ -75,7 +75,7 @@
 
 .faq-item {
   background: #ffffff;
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   border-radius: 10px;
   margin-bottom: 16px;
   padding: 18px 20px;

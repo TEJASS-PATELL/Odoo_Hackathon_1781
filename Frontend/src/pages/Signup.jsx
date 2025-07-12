@@ -1,15 +1,12 @@
-
-(
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import { useAuthStore } from "../Store/useAuthStore";
 import { FaEye, FaEyeSlash, FaLock, FaLockOpen } from 'react-icons/fa';
 import { Eye, EyeOff, Loader2, Lock, Mail, Unlock, User } from "lucide-react";
 import toast from "react-hot-toast";
-import "../styles/SignUpPage.css";
+import "../styles/Signup.css";
 
-const SignUpPage = () => {
+const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({
     fullname: "",
@@ -164,37 +161,4 @@ const SignUpPage = () => {
   );
 };
 
-export default SignUpPage;
-
-=======
-import React from 'react';
-import './Home.css';
-
-const Home = () => {
-  return (
-    <section className="hero">
-      <div className="hero-container">
-        <h1 className="hero-title">
-          Swap Skills, Share Knowledge, <br />
-          <span className="highlight">Grow Together</span>
-        </h1>
-        <p className="hero-subtitle">
-          The ultimate platform to learn what you want and teach what you know,
-          connecting you with a global community of creators and professionals.
-        </p>
-        <div className="hero-buttons">
-          <a href="#" className="btn-primary">Start Sharing →</a>
-          <a href="#skills" className="btn-outline">Explore Skills</a>
-        </div>
-
-        <div className="hero-graphic">
-          <p className="demo-text"></p>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-export default Home;
-
-
+export default Signup;

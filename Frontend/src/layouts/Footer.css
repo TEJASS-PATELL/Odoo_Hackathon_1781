@@ -34,7 +34,7 @@
     font-size: 1.35rem;
     font-weight: 600;
     color: black; /* black heading */
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     position: relative;
 }
 
@@ -57,7 +57,7 @@
 .contact-item {
     display: flex;
     align-items: flex-start;
-    margin-bottom: 15px;
+    margin-bottom: 1px;
 }
 
 .contact-icon {

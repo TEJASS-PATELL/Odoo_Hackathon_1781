@@ -80,6 +80,17 @@
   outline: none;
 }
 
+.input-icon{
+  background: none;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
 .password-toggle {
   background: none;
   font-size: 1rem;

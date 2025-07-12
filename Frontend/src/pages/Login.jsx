@@ -1,14 +1,14 @@
 import { useState, useRef } from "react";
-import { useAuthStore } from "../Store/useAuthStore";
+// import { useAuthStore } from "../Store/useAuthStore";
 import { Link } from "react-router-dom";
 import { FaLock, FaLockOpen } from 'react-icons/fa';
 import { Loader2, Lock, Mail } from "lucide-react";
-import "./LoginPage.css";
+import "./Login.css";
 
-const LoginPage = () => {
+const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
-  const { login, isLoggingIn } = useAuthStore();
+  const { login, isLoggingIn } = useState(true);
 
   const formRef = useRef(null);
 
@@ -24,7 +24,6 @@ const LoginPage = () => {
         <main className="login-form-container">
           <div className="glassmorphism-form" ref={formRef}>
             <div className="text-center">
-              <img className="images" src="chat.png" alt="Chat Icon" />
               <h1>Welcome Back!</h1>
               <p>Sign in to your account</p>
             </div>
@@ -78,8 +77,6 @@ const LoginPage = () => {
                   "Login"
                 )}
               </button>
-
-              <Link to="/forgot-password" className="forgot-password">Forgot Password?</Link>
             </form>
 
             <div className="text-center">
@@ -101,4 +98,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default Login;
