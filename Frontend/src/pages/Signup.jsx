@@ -1,10 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAuthStore } from "../Store/useAuthStore";
+// import { useAuthStore } from "../Store/useAuthStore";
 import { FaEye, FaEyeSlash, FaLock, FaLockOpen } from 'react-icons/fa';
 import { Eye, EyeOff, Loader2, Lock, Mail, Unlock, User } from "lucide-react";
-import toast from "react-hot-toast";
-import "../styles/Signup.css";
+import "./Signup.css";
 
 const Signup = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -16,7 +15,7 @@ const Signup = () => {
     confirmPassword: "",
   });
 
-  const { signup, isSigningUp } = useAuthStore();
+  const { signup, isSigningUp } = useState(true);
 
   const validateForm = () => {
     const { fullname, email, username, password, confirmPassword } = formData;
