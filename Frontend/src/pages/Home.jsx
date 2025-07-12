@@ -3,6 +3,8 @@ import './Home.css'
 import Working from '../components/Working';
 import Skills from '../components/Skills';
 import BenefitsSection from '../components/BenifitsSection';
+import SuccessStories from '../components/SuccessStories';
+import FAQ from '../components/FAQ';
 
 const Home = () => {
   return (
@@ -28,6 +30,8 @@ const Home = () => {
       <Working />
       <Skills />
       <BenefitsSection />
+      <SuccessStories />
+      <FAQ />
     </section>
   );
 };

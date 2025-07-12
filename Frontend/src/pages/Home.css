@@ -10,9 +10,9 @@
 }
 
 .hero-title {
-  font-size: 36px;
+  font-size: 50px;
   font-weight: 800;
-  color: #111827;
+  color: #000000;
   margin-bottom: 20px;
   line-height: 1.4;
 }
@@ -22,9 +22,9 @@
 }
 
 .hero-subtitle {
-  font-size: 18px;
-  color: #4b5563;
-  max-width: 700px;
+  font-size: 25px;
+  color: #000000;
+  max-width: 1000px;
   margin: 0 auto 30px auto;
 }
 
@@ -37,7 +37,7 @@
 }
 
 .btn-primary {
-  background-color: #7c3aed;
+  background-color: #000000;
   color: white;
   padding: 12px 24px;
   border-radius: 8px;
@@ -47,7 +47,7 @@
 }
 
 .btn-primary:hover {
-  background-color: #5b21b6;
+  transform: scale(1.05);
 }
 
 .btn-outline {
