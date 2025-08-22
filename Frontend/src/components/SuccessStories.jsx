@@ -1,6 +1,6 @@
 import React from 'react';
 import './SuccessStories.css';
-import { FaStar } from 'react-icons/fa'; // ✅ Import real star icon
+import { FaStar } from 'react-icons/fa'; 
 
 const testimonials = [
   {

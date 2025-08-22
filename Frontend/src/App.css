@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+   font-family: 'Montserrat';
+  background-color: #ffffff;
+  color: #000000;
+  line-height: 1.6; 
+}
+
+body {
+  overflow: auto;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;     /* IE & Edge */
+}
+
+body::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari */
+}
+
+.my-scrollable-div {
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.my-scrollable-div::-webkit-scrollbar {
+  display: none;
+}

@@ -1,99 +1,122 @@
-.navbar {
-  position: sticky;
+.Lnavbar {
+  width: 100%;
+  background-color: #ffffff;
+  height: 70px;
+  padding: 0 40px;
+  position: fixed;
   top: 0;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
   border-bottom: 1px solid #ddd;
-}
-
-.navbar-container {
-  max-width: 1700px;
-  margin: auto;
-  padding: 1rem;
+  left: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s ease;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  align-items: center; /* ✅ content center vertically */
 }
 
-.navbar-logo {
-  font-size: 25px;
+.Lnavbar-container {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* optional: space between logo & buttons */
+}
+
+.Lnavbar-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 40px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.logo{
+   font-size: 1.7rem;
   font-weight: bold;
-  color: #000000;
+  color: black;
   text-decoration: none;
 }
 
 .highlight {
-  color: #7c3aed;
+  color: #5e60ce;
 }
 
-.navbar-links {
+.Lnavbar-auth-buttons {
+  margin-left: auto; /* ye buttons ko right side push karega */
   display: flex;
-  gap: 2.5rem;
+  gap: 15px;
   align-items: center;
 }
 
-.navbar-links a {
-  color: #000000;
-  font-size: 18px;
+.Lnavbar-links li a {
   text-decoration: none;
-  transition: color 0.3s;
+  color: #111;
+  font-weight: 600;
+  font-size: 1.05em;
+  position: relative;
+  padding: 8px 2px;
+  transition: color 0.3s ease;
 }
 
-.login-btn {
-  background: #7c3aed;
-  border: none;
+.Lnavbar-links li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background-color: #7c3aed;
+  transition: width 0.3s ease;
+}
+
+.Lnavbar-links li a:hover {
+  color: #7c3aed;
+}
+
+.Lnavbar-links .ai-tools{
+  color: red;
+}
+
+.Lnavbar-links li a:hover::after {
+  width: 100%;
+}
+
+.Llogin-btn {
+  background-color: #000000;
   color: white;
-  padding: 6px 16px;
-  border-radius: 8px;
   text-decoration: none;
-  transition: background 0.3s;
-}
-
-.join-btn {
-  background: #7c3aed;
-  color: white;
-  padding: 6px 16px;
+  padding: 8px 20px;
   border: none;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: background 0.3s;
-}
-
-/* Hamburger menu */
-.hamburger {
-  display: none;
-  flex-direction: column;
+  border-radius: 6px;
+  display: inline-block;
   cursor: pointer;
-  gap: 5px;
-}
-
-.hamburger span {
-  width: 25px;
-  height: 3px;
-  background: #000;
-  border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
 @media (max-width: 768px) {
-  .hamburger {
-    display: flex;
+  .Lnavbar-container {
+    justify-content: flex-start;
   }
 
-  .navbar-links {
-    position: absolute;
-    top: 70px;
-    left: 0;
-    right: 0;
-    background: white;
+  .Lnavbar-links {
     flex-direction: column;
-    padding: 1rem;
+    align-items: flex-start;
+    gap: 20px;
+    background: #fff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: 20px;
     display: none;
-    border-top: 1px solid #ddd;
-    z-index: 99;
   }
 
-  .navbar-links.open {
+  .Lnavbar.open .Lnavbar-links {
     display: flex;
   }
 }

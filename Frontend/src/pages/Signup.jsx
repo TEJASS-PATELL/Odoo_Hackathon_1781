@@ -28,7 +28,6 @@ const Signup = () => {
     }
   }, [authUser, navigate]);
 
-  // ✅ Form Validation
   const validateForm = () => {
     const { fullname, email, password, confirmPassword } = formData;
     if (!fullname.trim()) return toast.error("Full name is required");
@@ -40,7 +39,6 @@ const Signup = () => {
     return true;
   };
 
-  // ✅ Submit handler
   const handleSubmit = (e) => {
     e.preventDefault();
     if (validateForm()) {
@@ -54,9 +52,8 @@ const Signup = () => {
       <div className="signup-container">
         <main>
           <form className="signup-form" onSubmit={handleSubmit}>
-            <h2>Create an Account</h2>
+            <h2>Create an Account !</h2>
 
-            {/* Full Name */}
             <div className="input-group">
               <label>Full Name</label>
               <div className="input-wrapper">
@@ -73,7 +70,6 @@ const Signup = () => {
               </div>
             </div>
 
-            {/* Email */}
             <div className="input-group">
               <label>Email</label>
               <div className="input-wrapper">
@@ -90,7 +86,6 @@ const Signup = () => {
               </div>
             </div>
 
-            {/* Password */}
             <div className="input-group">
               <label>Password</label>
               <div className="input-wrapper">
@@ -114,7 +109,6 @@ const Signup = () => {
               </div>
             </div>
 
-            {/* Confirm Password */}
             <div className="input-group">
               <label>Confirm Password</label>
               <div className="input-wrapper">
@@ -134,7 +128,6 @@ const Signup = () => {
               </div>
             </div>
 
-            {/* Submit Button */}
             <button
               type="submit"
               className={`submit-btn ${isSigningUp ? "disabled" : ""}`}

@@ -14,7 +14,6 @@
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Header */
 .login-header {
   text-align: center;
   margin-bottom: 20px;
@@ -25,7 +24,6 @@
   color: #333;
 }
 
-/* Form Container */
 .login-form-container {
   display: flex;
   justify-content: center;
@@ -35,14 +33,28 @@
   width: 100%;
 }
 
-/* Text Center */
 .text-center {
   text-align: center;
   margin-bottom: 20px;
 }
 
+.text-centerr {
+  text-align: center;
+  margin-bottom: 20px;
+}
 
-/* Form */
+.text-center p {
+  margin-top: 5px;
+  color: #666;
+  font-size: 16px;
+}
+
+.text-centerr p {
+  margin-top: 15px;
+  color: #666;
+  font-size: 16px;
+}
+
 .login-form {
   display: flex;
   flex-direction: column;
@@ -75,7 +87,7 @@
   outline: none;
 }
 
-.input-icon{
+.input-icon {
   background: none;
   font-size: 1rem;
   border: none;
@@ -121,7 +133,6 @@
   transform: translateY(0);
 }
 
-/* Links */
 .forgot-password {
   display: block;
   margin: 10px 0;
@@ -145,14 +156,6 @@
   text-decoration: underline;
 }
 
-/* Text Below Button */
-p {
-  margin-top: 15px;
-  color: #666;
-  font-size: 16px;
-}
-
-/* Footer */
 .login-footer {
   margin-top: 20px;
   text-align: center;
@@ -160,12 +163,11 @@ p {
   color: #999;
 }
 
-/* CSS */
 .loader-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 8px; /* 8px ≈ Tailwind's gap-2 */
+  gap: 8px;
 }
 
 .spinner {
@@ -177,7 +179,6 @@ p {
   animation: spin 1s linear infinite;
 }
 
-/* Animation */
 @keyframes spin {
   to {
     transform: rotate(360deg);

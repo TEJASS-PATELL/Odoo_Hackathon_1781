@@ -1,34 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react'
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 
 export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen(!isOpen);
-
   return (
-    <header className="navbar">
-      <div className="navbar-container">
-        <a href="/" className="navbar-logo">
-          Skill<span className="highlight">Swap</span>
-        </a>
+    <nav className="Lnavbar">
+  <div className='Lnavbar-container'>
+    <h2 className='logo'>
+      Skill<span className='highlight'>Swap</span>
+    </h2>
+    <ul className="Lnavbar-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#explore">Explore Skills</a></li>
+      <li><a href="#mentors">Find Mentors</a></li>
+      <li><a href="#exchange">Skill Exchange</a></li>
+      <li><a href="#community">Community</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div className="Lnavbar-auth-buttons">
+      <Link to="/login" className="Llogin-btn">Login</Link>
+      <Link to="/signup" className="Llogin-btn">Join for free</Link>
+    </div>
+  </div>
+</nav>
 
-        <div className="hamburger" onClick={toggleMenu}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-
-        <nav className={`navbar-links ${isOpen ? 'open' : ''}`}>
-          <a href="#how-it-works">How It Works</a>
-          <a href="#skills">Skills</a>
-          <a href="#ai-path">✨ AI Paths</a>
-          <a href="#benefits">Benefits</a>
-          <a href="#testimonials">Testimonials</a>
-         <Link to="/login" className="login-btn">Log In</Link>
-          <Link to="/signup" className="join-btn">Join for Free</Link>
-        </nav>
-      </div>
-    </header>
-  );
+  )
 }

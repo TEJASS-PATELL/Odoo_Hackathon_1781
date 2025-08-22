@@ -22,7 +22,8 @@
 .signup-form h2 {
   text-align: center;
   margin-bottom: 25px;
-  color: #333;
+  color: #000000;
+  font-size: 30px;
 }
 
 /* Input Groups */

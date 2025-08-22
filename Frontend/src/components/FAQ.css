@@ -75,17 +75,15 @@
 
 .faq-item {
   background: #ffffff;
-  border-bottom: 1px solid #ddd;
   border-radius: 10px;
   margin-bottom: 16px;
   padding: 18px 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-  transition: background 0.3s ease;
+  transition: transform .3s ease;
   cursor: pointer;
 }
 
 .faq-item:hover {
-  background: #f5f3ff;
+  transform: scale(1.01);
 }
 
 .faq-question {
@@ -94,7 +92,7 @@
   align-items: center;
   font-weight: 600;
   color: #000000;
-  font-size: 1.15rem;
+  font-size: 1.25rem;
 }
 
 .faq-icon {
@@ -104,7 +102,7 @@
 
 .faq-answer {
   margin-top: 10px;
-  font-size: 0.95rem;
+  font-size: 1.15rem;
   color: #313131;
   line-height: 1.5;
   animation: fadeIn 0.3s ease-in-out;

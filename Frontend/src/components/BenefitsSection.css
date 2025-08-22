@@ -5,15 +5,14 @@
 }
 
 .benefits-container {
-  max-width: 1200px;
+  max-width: 1300px;
   margin: auto;
 }
 
 .benefits-title {
-  font-size: 45px;
+  font-size: 40px;
   font-weight: bold;
   color: #000000;
-  margin-bottom: 10px;
 }
 
 .benefits-subtitle {
@@ -24,7 +23,7 @@
 
 .benefits-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 24px;
   text-align: left;
 }

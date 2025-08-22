@@ -2,17 +2,16 @@ import { useState, useRef } from "react";
 import { useAuthStore } from "../stores/useAuthStore";
 import { Link } from "react-router-dom";
 import { FaLock, FaLockOpen } from 'react-icons/fa';
-import { Loader2, Lock, Mail } from "lucide-react";
+import { Lock, Mail } from "lucide-react";
 import "./Login.css";
 
 const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [formData, setFormData] = useState({ email: "", password: "" });
   const { login, isLoggingIn } = useAuthStore();
-
   const formRef = useRef(null);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     login(formData);
   };
@@ -20,7 +19,6 @@ const Login = () => {
   return (
     <div className="wrapper">
       <div className="login-container">
-
         <main className="login-form-container">
           <div className="glassmorphism-form" ref={formRef}>
             <div className="text-center">
@@ -37,7 +35,9 @@ const Login = () => {
                   type="email"
                   placeholder="you@example.com"
                   value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, email: e.target.value })
+                  }
                   required
                 />
               </div>
@@ -50,7 +50,9 @@ const Login = () => {
                   type={showPassword ? "text" : "password"}
                   placeholder="••••••••"
                   value={formData.password}
-                  onChange={(e) => setFormData({ ...formData, password: e.target.value })}
+                  onChange={(e) =>
+                    setFormData({ ...formData, password: e.target.value })
+                  }
                   required
                 />
                 <button
@@ -64,9 +66,9 @@ const Login = () => {
 
               <button type="submit" className="submit-btnn" disabled={isLoggingIn}>
                 {isLoggingIn ? (
-                  <div class="loader-container">
-                    <div class="spinner"></div>
-                    <span>Loading....</span>
+                  <div className="loader-container">
+                    <div className="spinner"></div>
+                    <span>Loading...</span>
                   </div>
                 ) : (
                   "Login"
@@ -74,7 +76,7 @@ const Login = () => {
               </button>
             </form>
 
-            <div className="text-center">
+            <div className="text-centerr">
               <p>
                 Don't have an account?{" "}
                 <Link to="/signup" className="signup-link">

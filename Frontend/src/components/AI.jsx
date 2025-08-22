@@ -8,16 +8,16 @@ const Ai = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
 
-  const apiKey = ''; // 👈 Put your Gemini API key here
+  const apiKey = ''; 
 
   const generateLearningPath = async () => {
     if (!skill.trim()) {
-      setError('❗ Please enter a skill.');
+      setError('Please enter a skill.');
       return;
     }
 
     if (!apiKey.trim()) {
-      setError('⚠️ Please enter your API key to generate a learning path.');
+      setError('Please enter your API key to generate a learning path.');
       return;
     }
 
@@ -96,7 +96,7 @@ const Ai = () => {
             onKeyDown={(e) => e.key === 'Enter' && generateLearningPath()}
           />
           <button onClick={generateLearningPath} disabled={isLoading}>
-            {isLoading ? 'Generating...' : '✨ Generate Path'}
+            {isLoading ? 'Generating...' : 'Generate Path'}
           </button>
         </div>
 

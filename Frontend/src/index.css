@@ -5,8 +5,23 @@
 }
 
 html, body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Montserrat';
   background-color: #ffffff;
   color: #000000;
-  line-height: 1.6;
+  line-height: 1.6; 
+   overflow: auto;
+  scrollbar-width: none;        /* Firefox */
+  -ms-overflow-style: none;   
+}
+
+body::-webkit-scrollbar {
+  display: none;                /* Chrome, Safari */
+}
+.my-scrollable-div {
+  overflow-y: scroll;
+  scrollbar-width: none;
+}
+
+.my-scrollable-div::-webkit-scrollbar {
+  display: none;
 }

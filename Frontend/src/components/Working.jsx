@@ -7,7 +7,7 @@ const Working = () => {
     {
       icon: <FaSearch />,
       title: 'Discover',
-      description: 'Find skills or use our ✨ AI to generate a custom learning path for you.',
+      description: 'Find skills or use our AI to generate a custom learning path for you.',
     },
     {
       icon: <FaUser />,

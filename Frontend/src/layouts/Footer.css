@@ -40,10 +40,11 @@
 
 .footer-links {
     list-style: none;
+    padding: 0;
 }
 
 .footer-links li {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
 }
 
 .footer-links a {
@@ -52,6 +53,10 @@
     transition: all 0.3s;
     font-size: 1.1rem;
     display: inline-block;
+}
+
+.footer-links a:hover{
+    text-decoration: underline;
 }
 
 .contact-item {

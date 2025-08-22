@@ -59,7 +59,7 @@ const Footer = () => {
 
                 <div className="footer-bottom">
                     <p className="copyright">
-                        © 2025 SkillSwap — Built with 💡 by Team Hackathon
+                        © 2025 SkillSwap
                     </p>
                     <div className="social-links">
                         <a href="#" className="social-link"><FaFacebookF /></a>

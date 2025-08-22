@@ -1,6 +1,6 @@
 /* Section styles */
 .testimonial-section {
-  padding: 60px 20px;
+  padding: 120px 20px;
   background-color: #ffffff;
   text-align: center;
 }
@@ -13,9 +13,9 @@
 }
 
 .subtitle {
-  font-size: 1.25rem;
+  font-size: 20px;
   color: #6b7280; 
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
 .testimonial-grid {
